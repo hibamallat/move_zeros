@@ -4,8 +4,8 @@ of the list while maintaining the order of the other elements.
 """
 
 def move_zeros(numbers):
-    zeros_list=[]
-    non_zeros_list=[]
+    zeros_list= []
+    non_zeros_list= []
 
     for i in range(len(numbers)):
         
@@ -16,22 +16,16 @@ def move_zeros(numbers):
 
     return non_zeros_list + zeros_list
 
-list_nums=[]
-
-print("Enter -1 to stop")
+list_nums = []
 try:
-
-    for i in range (8):
-        user_num = int(input("Please enter a number: "))
+    size = int(input("How many numbers you would to put inthe list? "))
+    for i in range (size):
+        user_num = int(input(f"Please enter a number {i + 1}: "))
         list_nums.append(user_num)
 
-        if user_num == -1:
-            list_nums.remove(user_num)
-            break
-
     print("The original list:",list_nums)
-    zeros_right_list = move_zeros(list_nums)
-    print("After moving zeros list:",zeros_right_list)
+    move_zeros_list = move_zeros(list_nums)
+    print(f"After moving zeros list: {move_zeros_list}")
 
 except ValueError:
     print("Enter a number!")
