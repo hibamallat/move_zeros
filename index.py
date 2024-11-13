@@ -19,16 +19,19 @@ def move_zeros(numbers):
 list_nums=[]
 
 print("Enter -1 to stop")
+try:
 
-for i in range (8):
+    for i in range (8):
+        user_num = int(input("Please enter a number: "))
+        list_nums.append(user_num)
 
-    user_num = int(input("Please enter a number: "))
-    list_nums.append(user_num)
+        if user_num == -1:
+            list_nums.remove(user_num)
+            break
 
-    if user_num == -1:
-        list_nums.remove(user_num)
-        break
+    print("The original list:",list_nums)
+    zeros_right_list = move_zeros(list_nums)
+    print("After moving zeros list:",zeros_right_list)
 
-print("The original list:",list_nums)
-zeros_right_list = move_zeros(list_nums)
-print("After moving zeros list:",zeros_right_list)
+except ValueError:
+    print("Enter a number!")
